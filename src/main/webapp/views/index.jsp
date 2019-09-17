@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Index</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<title>Index</title>
 </head>
 <body>
 	<s:url namespace="/" action="produits" var="lien1"></s:url>
