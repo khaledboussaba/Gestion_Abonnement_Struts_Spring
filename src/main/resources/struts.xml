@@ -15,6 +15,12 @@
 		<action name="save" class="com.dev.web.ProduitAction" method="save">
 			<result name="success">views/produits.jsp</result>
 		</action>
+		<action name="edit" class="com.dev.web.ProduitAction" method="edit">
+			<result name="success">views/produits.jsp</result>
+		</action>
+		<action name="delete" class="com.dev.web.ProduitAction" method="delete">
+			<result name="success">views/produits.jsp</result>
+		</action>
 	</package>
 	   
 </struts>

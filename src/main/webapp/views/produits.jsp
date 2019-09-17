@@ -10,6 +10,7 @@
 	
 	<div>
 		<s:form action="save" method="post">
+			<s:hidden name="editMode"></s:hidden>
 			<s:textfield label="REFERENCE" name="produit.reference"></s:textfield>
 			<s:textfield label="DESIGNATION" name="produit.designation"></s:textfield>
 			<s:textfield label="PRIX" name="produit.prix"></s:textfield>
@@ -35,6 +36,18 @@
 					<td><s:property value="prix" /></td>
 					<td><s:property value="quantite" /></td>
 					<td><s:property value="promo" /></td>
+					<s:url namespace="/" action="edit" var="lien1">
+						<s:param name="ref">
+							<s:property value="reference"/>
+						</s:param>
+					</s:url>
+					<s:url namespace="/" action="delete" var="lien2">
+						<s:param name="ref">
+							<s:property value="reference"/>
+						</s:param>
+					</s:url>
+					<td><s:a href="%{lien1}">Editer</s:a></td>
+					<td><s:a href="%{lien2}">Supprimer</s:a></td>
 				</tr>
 			</s:iterator>
 		</table>

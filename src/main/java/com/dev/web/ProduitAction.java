@@ -13,6 +13,8 @@ public class ProduitAction extends ActionSupport {
 	
 	private List<Produit> produits;
 	private ICatalogueService service = SingletonService.getService();
+	private String ref;
+	private boolean editMode = false;
 	
 	public String index() {
 		produits = service.listeProduits();
@@ -20,7 +22,27 @@ public class ProduitAction extends ActionSupport {
 	}
 
 	public String save() {
-		service.addProduit(produit);
+		if (editMode == false) {
+			service.addProduit(produit);	
+			produit = new Produit();
+		} else {
+			service.updateProduit(produit);
+			editMode = false;
+			produit = new Produit();
+		}
+		produits = service.listeProduits();
+		return SUCCESS;
+	}
+	
+	public String delete() {
+		service.deleteProduit(ref);
+		produits = service.listeProduits();
+		return SUCCESS;
+	}
+	
+	public String edit() {
+		editMode = true;
+		produit = service.getProduit(ref);
 		produits = service.listeProduits();
 		return SUCCESS;
 	}
@@ -39,6 +61,22 @@ public class ProduitAction extends ActionSupport {
 
 	public void setProduits(List<Produit> produits) {
 		this.produits = produits;
+	}
+
+	public String getRef() {
+		return ref;
+	}
+
+	public void setRef(String ref) {
+		this.ref = ref;
+	}
+
+	public boolean isEditMode() {
+		return editMode;
+	}
+
+	public void setEditMode(boolean editMode) {
+		this.editMode = editMode;
 	}
 
 }
