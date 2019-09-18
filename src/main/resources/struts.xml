@@ -4,5 +4,17 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
 	
+	<package name="default" namespace="/" extends="struts-default">
+		<default-action-ref name="index"></default-action-ref>
+		<action name="index" class="com.dev.web.AbonnementAction" method="index">
+			<result name="success">views/abonnements.jsp</result>
+		</action>
+		<action name="getSubForm" class="com.dev.web.AbonnementAction" method="getSubForm">
+			<result name="success">views/subForm.jsp</result>
+		</action>
+		<action name="save" class="com.dev.web.AbonnementAction" method="save">
+			<result name="success">views/abonnements.jsp</result>
+		</action>
+	</package>
 	   
 </struts>

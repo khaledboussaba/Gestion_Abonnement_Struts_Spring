@@ -10,24 +10,24 @@ import javax.persistence.Entity;
 public class AbonnementGSM extends Abonnement {
 	private static final long serialVersionUID = 1L;
 	
-	private int fidelio;
+	private int fideleo;
 
 	
 	public AbonnementGSM() {
 		super();
 	}
 
-	public AbonnementGSM(Date dateAbonnement, double solde, boolean actif, int fidelio) {
+	public AbonnementGSM(Date dateAbonnement, double solde, boolean actif, int fideleo) {
 		super(dateAbonnement, solde, actif);
-		this.fidelio = fidelio;
+		this.fideleo = fideleo;
 	}
 
-	public int getFidelio() {
-		return fidelio;
+	public int getFideleo() {
+		return fideleo;
 	}
 
-	public void setFidelio(int fidelio) {
-		this.fidelio = fidelio;
+	public void setFideleo(int fideleo) {
+		this.fideleo = fideleo;
 	}
 
 }
