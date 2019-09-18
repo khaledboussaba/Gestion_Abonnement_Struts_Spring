@@ -2,9 +2,12 @@ package com.dev.service;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.dev.dao.ICatalogueDAO;
 import com.dev.entities.Produit;
 
+@Transactional
 public class CatalogueServiceImpl implements ICatalogueService {
 
 	private ICatalogueDAO dao;	

@@ -2,17 +2,20 @@ package com.dev.web;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.dev.entities.Produit;
 import com.dev.service.ICatalogueService;
-import com.dev.service.SingletonService;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ProduitAction extends ActionSupport {
-	
+	private static final long serialVersionUID = 1L;
+
 	private Produit produit = new Produit();
 	
 	private List<Produit> produits;
-	private ICatalogueService service = SingletonService.getService();
+	@Autowired
+	private ICatalogueService service;
 	private String ref;
 	private boolean editMode = false;
 	
