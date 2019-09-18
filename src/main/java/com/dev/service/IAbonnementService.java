@@ -1,11 +1,11 @@
-package com.dev.dao;
+package com.dev.service;
 
 import java.util.Date;
 import java.util.List;
 
 import com.dev.entities.Abonnement;
 
-public interface IAbonnementDao {
+public interface IAbonnementService {
 	public void addAbonnement(Abonnement abonnement);
 	public List<Abonnement> listeAbonnements(boolean actif);
 	public List<Abonnement> listeAbonnements(Date d1, Date d2);
